@@ -1,0 +1,7 @@
+.book-list{
+    padding: 20px;
+}
+.book{
+    min-height: 240px;
+    text-align: center;
+}

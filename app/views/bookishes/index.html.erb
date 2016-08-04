@@ -1,12 +1,12 @@
-<%= stylesheet_link_tag "welcome" %>
+<%= stylesheet_link_tag "bookishes_index" %>
 <%= stylesheet_link_tag "bootstrap.min" %>
-<%= render "welcome/index" %>
+<%= render "nav" %>
 
 <div class="col-md-12 book-list">
   <% @bookishes.each do |bookish| %>
       <div class="col-md-3 book">
         <%= image_tag bookish.asin + ".jpg", size: "100x120"%>
-        <div ><%= bookish.title %></div>
+        <div><%= link_to bookish.title, bookish_path(bookish) %></div>
         <div >
         <% bookish.author.each do |author|%>
             <%= author + " "%>

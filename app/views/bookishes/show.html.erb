@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag "bookishes_show" %>
+<%= stylesheet_link_tag "bootstrap.min" %>
+<%= render "nav" %>
+
+<div class="show_book">
+  <div class="book_image">
+    <%= image_tag @bookish.asin + ".jpg", size: "200x240"%>
+  </div>
+  <div class="detail_info">
+    <div class="title"><%= @bookish.title %></div>
+    <div class="info_except_title">
+      <% @bookish.author.each do |author|%>
+          <%= author + " "%>
+      <% end %>
+    </div>
+    <div class="info_except_title"><%= @bookish.published_at %></div>
+    <div class="info_except_title"><%= @bookish.isbn.last %></div>
+    <p class="info_except_title">书籍简介...</p>
+  </div>
+</div>
+
+

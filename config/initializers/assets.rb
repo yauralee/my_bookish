@@ -2,9 +2,7 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
-Rails.application.config.assets.precompile += %w( welcome.css )
-Rails.application.config.assets.precompile += %w( bootstrap.min.css )
-
+Rails.application.config.assets.precompile += %w( welcome.css bookishes_index.css bootstrap.min.css bookishes_show.css)
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 

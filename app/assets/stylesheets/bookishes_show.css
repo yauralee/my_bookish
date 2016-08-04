@@ -1,0 +1,18 @@
+.show_book {
+    padding: 150px;
+}
+.book_image {
+    display: inline-block;
+    padding-right: 20px;
+}
+.detail_info {
+    display: inline-block;
+}
+.title {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 50px;
+}
+.info_except_title {
+    line-height: 20px;
+}
