@@ -2,6 +2,10 @@
     padding: 20px;
 }
 .book{
-    min-height: 240px;
+    height: 260px;
     text-align: center;
+}
+.pagination {
+    float:right;
+    padding-right: 50px;
 }
