@@ -1,0 +1,2 @@
+module BookishesHelper
+end
