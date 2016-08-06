@@ -1,6 +1,6 @@
 class BookishesController < ApplicationController
+  layout "bookishes"
   def index
-    # @bookishes = Bookish.all
     @bookishes = Bookish.paginate(:page => params[:page])
 
   end

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag "bookish_nav" %>
+  <%= stylesheet_link_tag "bookish" %>
+  <%= stylesheet_link_tag "bootstrap.min" %>
+</head>
+<body>
+<nav class="navigation">
+  <span>Bookish</span>
+  <%= link_to '主页', bookishes_path %>
+</nav>
+
+<%= yield %>
+
+</body>
+</html>
