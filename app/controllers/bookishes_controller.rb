@@ -1,7 +1,7 @@
 class BookishesController < ApplicationController
   layout "bookish"
   def index
-    @bookishes = Bookish.paginate(:page => params[:page])
+    (session.present?) ? (@bookishes = Bookish.paginate(:page => params[:page])) : (redirect_to signup_path)
   end
 
   def show

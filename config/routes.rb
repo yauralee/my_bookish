@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   resources :bookishes
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'

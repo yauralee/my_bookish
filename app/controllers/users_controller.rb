@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_filter :verify_authenticity_token
+
   def new
     @user = User.new(params[:user])
   end
@@ -7,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.password = (user_params[:password].blank? ? nil : Digest::SHA256.hexdigest(user_params[:password]))
     if @user.save
+      session[:current_user_id] = @user.id
       redirect_to bookishes_path
     else
       render 'new'
