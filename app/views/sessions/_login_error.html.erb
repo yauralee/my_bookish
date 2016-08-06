@@ -1,0 +1,7 @@
+<% if flash[:invalid_input] %>
+    <div class="login_error"><%= flash[:invalid_input] %></div>
+<% end %>
+
+<% if flash[:login_info_blank] %>
+    <div class="login_error"><%= flash[:login_info_blank] %></div>
+<% end %>

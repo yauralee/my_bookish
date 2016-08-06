@@ -9,13 +9,9 @@ class User < ActiveRecord::Base
   def self.authenticate(email, password)
     if VALID_EMAIL_REGEX.match(email)
       user = User.find_by_email(email)
-      if match_password(user, password)
-        return user
-      else
-        return false
-      end
+      match_password(user, password) ? user : false
     else
-      return false
+      false
     end
   end
 

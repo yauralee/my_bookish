@@ -1,9 +1,11 @@
 <%= stylesheet_link_tag "register_login" %>
 
+
 <div class="register">
   <h1 class="page_title">Welcome to Bookish</h1>
   <div class="col-md-4 col-md-offset-4 login_info">
     <%= form_for(:session, url: login_path) do |f| %>
+        <%= render 'sessions/login_error' %>
 
         <%= f.label :邮箱 %>
         <%= f.email_field :email %>
