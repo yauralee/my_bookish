@@ -14,7 +14,7 @@ input, textarea {
 }
 
 
-.register_info {
+.register_info, .login_info {
     margin-top: 30px;
     padding: 40px 80px;
     border: 3px solid #929292;

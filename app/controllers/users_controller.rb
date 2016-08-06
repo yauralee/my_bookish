@@ -9,12 +9,13 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.password = (user_params[:password].blank? ? nil : Digest::SHA256.hexdigest(user_params[:password]))
     if @user.save
-      session[:current_user_id] = @user.id
+      log_in(@user)
       redirect_to bookishes_path
     else
       render 'new'
     end
   end
+
 
   private
   def user_params

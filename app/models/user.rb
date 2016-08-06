@@ -5,4 +5,21 @@ class User < ActiveRecord::Base
             format: { with: VALID_EMAIL_REGEX },
             uniqueness: { case_sensitive: false }
   validates :password, presence: true
+
+  def self.authenticate(email, password)
+    if VALID_EMAIL_REGEX.match(email)
+      user = User.find_by_email(email)
+      if match_password(user, password)
+        return user
+      else
+        return false
+      end
+    else
+      return false
+    end
+  end
+
+  def self.match_password(user, password)
+    user.password == Digest::SHA256.hexdigest(password)
+  end
 end
