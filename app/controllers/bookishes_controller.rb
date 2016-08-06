@@ -1,8 +1,7 @@
 class BookishesController < ApplicationController
-  layout "bookishes"
+  layout "bookish"
   def index
     @bookishes = Bookish.paginate(:page => params[:page])
-
   end
 
   def show

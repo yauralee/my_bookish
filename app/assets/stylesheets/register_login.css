@@ -1,0 +1,27 @@
+.register {
+    padding-top: 80px;
+}
+.page_title {
+    font-size: 30px;
+    text-align: center;
+}
+
+input, textarea {
+    border: 2px solid #bbb;
+    line-height: 30px;
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+
+.register_info {
+    margin-top: 30px;
+    padding: 40px 80px;
+    border: 3px solid #929292;
+}
+
+.register_error {
+    font-size: 18px;
+    color: darkred;
+    margin: 0 0 50px 0;
+}
