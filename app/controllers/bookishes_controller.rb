@@ -2,8 +2,8 @@ class BookishesController < ApplicationController
   skip_before_filter :verify_authenticity_token
   before_action :check_log_in
 
-
   layout "bookish"
+
   def index
     @bookishes = Bookish.paginate(:page => params[:page]).order('id DESC')
   end

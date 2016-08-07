@@ -1,6 +1,7 @@
 class MyBooksController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
+  layout "bookish"
 
   def create
     if logged_in?
@@ -25,5 +26,13 @@ class MyBooksController < ApplicationController
     end
   end
 
-
+  def destroy
+    if logged_in?
+      @my_book = MyBook.find(params[:id])
+      @my_book.destroy
+      redirect_to my_books_path
+    else
+      redirect_to login_path
+    end
+  end
 end

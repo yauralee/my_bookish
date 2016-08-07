@@ -1,5 +1,7 @@
+<%= javascript_include_tag "application" %>
+
+
 <div class="col-md-12 book-list">
-  <% p "&&&&&&&&&&&&&&&" %>
   <% p @bookishes_in_my_books %>
   <% @bookishes_in_my_books.each do |bookish| %>
       <div class="col-md-3 book">
@@ -12,7 +14,8 @@
         </div>
         <div><%= bookish.published_at %></div>
 
-        <div><%= link_to "从书单移除" %></div>
+        <% @my_book = MyBook.find_by(user_id: session[:current_user_id], bookish_id: bookish.id) %>
+        <div><%= link_to "从书单移除", my_book_path(@my_book), :method => :delete %></div>
 
       </div>
   <% end %>
