@@ -1,0 +1,23 @@
+<div class="col-md-12 book-list">
+  <% p "&&&&&&&&&&&&&&&" %>
+  <% p @bookishes_in_my_books %>
+  <% @bookishes_in_my_books.each do |bookish| %>
+      <div class="col-md-3 book">
+        <%= image_tag bookish.asin + ".jpg", size: "100x120"%>
+        <div><%= link_to bookish.title, bookish_path(bookish) %></div>
+        <div >
+          <% bookish.author.each do |author|%>
+              <%= author + " "%>
+          <% end %>
+        </div>
+        <div><%= bookish.published_at %></div>
+
+        <div><%= link_to "从书单移除" %></div>
+
+      </div>
+  <% end %>
+</div>
+
+<div class="pagination"><%= will_paginate @bookishes %></div>
+
+

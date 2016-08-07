@@ -9,7 +9,7 @@
 <nav class="navigation">
   <span>Bookish</span>
   <span><%= link_to '主页', bookishes_path %></span>
-  <span><%= link_to '我的书单' %></span>
+  <span><%= link_to '我的书单', my_books_path %></span>
   <span class="top_right_nav"><%= link_to '退出', logout_path, :method => :delete %></span>
   <span class="top_right_nav"><%= User.find(session[:current_user_id]).email %></span>
 </nav>
