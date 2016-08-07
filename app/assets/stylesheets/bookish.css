@@ -1,12 +1,24 @@
 .navigation {
     border: 2px solid rgb(51,51,51);
-    padding: 5px 20px;
+    padding: 5px 20px 10px 20px;
 }
 .top_right_nav {
     float: right;
     padding-right: 20px;
 }
 
+.sb-search-input {
+    border: 1px solid #2c3e50;
+    background: #fff;
+    height: 25px;
+    font-family: inherit;
+    color: #2c3e50;
+}
+.sb-search-submit  {
+    width: 60px;
+    height: 25px;
+    text-align: center;
+}
 
 
 .book-list{

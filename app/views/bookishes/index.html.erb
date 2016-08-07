@@ -1,5 +1,14 @@
 <%= javascript_include_tag "application" %>
 
+<% content_for :search do %>
+  <span class="top_right_nav sb-search">
+     <%= form_tag("/bookishes", method: "get") do %>
+          <%= text_field_tag :keywords %>
+          <%= submit_tag("Search") %>
+     <% end %>
+  </span>
+<% end %>
+
 
 <div class="col-md-12 book-list">
   <% @bookishes.each do |bookish| %>

@@ -1,8 +1,14 @@
 <%= javascript_include_tag "application" %>
-
+<% content_for :search do %>
+    <span class="top_right_nav sb-search">
+     <%= form_tag("/my_books", method: "get") do %>
+          <%= text_field_tag :keywords %>
+            <%= submit_tag("Search") %>
+     <% end %>
+  </span>
+<% end %>
 
 <div class="col-md-12 book-list">
-  <% p @bookishes_in_my_books %>
   <% @bookishes_in_my_books.each do |bookish| %>
       <div class="col-md-3 book">
         <%= image_tag bookish.asin + ".jpg", size: "100x120"%>

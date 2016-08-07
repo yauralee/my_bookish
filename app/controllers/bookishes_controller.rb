@@ -6,6 +6,7 @@ class BookishesController < ApplicationController
 
   def index
     @bookishes = Bookish.paginate(:page => params[:page]).order('id DESC')
+    @bookishes = Bookish.name_include(params[:keywords]).paginate(:page => params[:page]).order('id DESC') if params[:keywords].present?
   end
 
   def show
