@@ -1,3 +1,6 @@
+<%= javascript_include_tag "application" %>
+
+
 <div class="col-md-12 book-list">
   <% @bookishes.each do |bookish| %>
       <div class="col-md-3 book">
@@ -8,7 +11,16 @@
             <%= author + " "%>
         <% end %>
         </div>
-        <div ><%= bookish.published_at %></div>
+        <div><%= bookish.published_at %></div>
+
+        <% user_id_array = [] %>
+        <% bookish.users.to_a.each do |user|%>
+            <% user_id_array.push(user.id) %>
+        <% end %>
+        <% unless user_id_array.include?(session[:current_user_id])  %>
+            <div><%= link_to "添加到书单", my_books_path(:bookish_id => bookish.id), :method => :post  %></div>
+        <% end%>
+
       </div>
   <% end %>
 </div>

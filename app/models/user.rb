@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :my_books
+  has_many :bookishes, through: :my_books
+
   before_save { email.downcase! }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true,

@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-
     if params[:session][:email].blank? || params[:session][:password].blank?
       flash.now[:login_info_blank] = 'email or password can\'t be blank'
       render 'new'
@@ -19,8 +18,6 @@ class SessionsController < ApplicationController
         render 'new'
       end
     end
-
-
   end
 
   def destroy
